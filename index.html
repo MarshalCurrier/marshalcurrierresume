@@ -2,42 +2,341 @@
 <html lang="en">
 
 <head>
-    <title>Marshal Currier - Resume</title>
+    <title>Marshal Currier - Business Acquisition Profile</title>
 
     <!-- Meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Responsive HTML5 Resume/CV Template for Developers">
-    <meta name="author" content="Xiaoying Riley at 3rd Wave Media">
+    <meta name="description" content="Marshal Currier - Seeking to acquire and grow an established business">
+    <meta name="author" content="Marshal Currier">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
+
     <!-- Google Font -->
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,400italic,300italic,300,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
     <!-- FontAwesome JS-->
     <script defer src="./js/all.min.js"></script>
+
     <!-- Global CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+
     <!-- Theme CSS -->
-    <link id="theme-style" rel="stylesheet" href="./css/custom.css">
+    <style>
+        /* Gurtz Group color scheme */
+        :root {
+            --primary-color: #6b3f27;  /* Warm brown */
+            --secondary-color: #1b1b1b;  /* Dark ink */
+            --warm-cream: #f7f3ee;  /* Cream background */
+            --sidebar-bg: #6b3f27;  /* Using warm brown for sidebar */
+            --text-dark: #1b1b1b;
+            --text-muted: #545E6C;
+        }
+
+        body {
+            font-family: "Roboto", sans-serif;
+            color: var(--text-dark);
+            background: var(--warm-cream);
+            background-image:
+                radial-gradient(circle at 1px 1px, rgba(107, 63, 39, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+            font-size: 13px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            min-height: 100vh;
+            padding: 0.5rem 0 0.5rem 0;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: var(--secondary-color);
+            transition: all 0.4s ease-in-out;
+        }
+
+        p {
+            line-height: 1.4;
+            margin-bottom: 10px;
+        }
+
+        .wrapper {
+            background: #ffffff;
+            max-width: 960px;
+            margin: 0 auto;
+            position: relative;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(107, 63, 39, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .sidebar-wrapper {
+            background: linear-gradient(135deg, var(--sidebar-bg), #4a2a1a);
+            position: absolute;
+            right: 0;
+            width: 240px;
+            height: 100%;
+            min-height: 800px;
+            color: #fff;
+        }
+
+        .sidebar-wrapper a {
+            color: #fff;
+        }
+
+        .sidebar-wrapper .profile-container {
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.15);
+            text-align: center;
+            color: #fff;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .sidebar-wrapper .name {
+            font-size: 32px;
+            font-weight: 900;
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        @media (max-width: 1200px) {
+            .sidebar-wrapper .name {
+                font-size: 28px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .sidebar-wrapper .name {
+                font-size: 24px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .sidebar-wrapper .name {
+                font-size: 20px;
+            }
+        }
+
+        .sidebar-wrapper .tagline {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 16px;
+            font-weight: 400;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        .sidebar-wrapper .profile {
+            margin-bottom: 15px;
+            border-radius: 50%;
+            border: 3px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .sidebar-wrapper .contact-list .svg-inline--fa {
+            margin-right: 5px;
+            font-size: 18px;
+            vertical-align: middle;
+        }
+
+        .sidebar-wrapper .contact-list li {
+            margin-bottom: 15px;
+        }
+
+        .sidebar-wrapper .contact-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .sidebar-wrapper .contact-list .email .svg-inline--fa {
+            font-size: 14px;
+        }
+
+        .sidebar-wrapper .container-block {
+            padding: 20px;
+        }
+
+        .sidebar-wrapper .container-block-title {
+            text-transform: uppercase;
+            font-size: 16px;
+            font-weight: 700;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .main-wrapper {
+            background: #fff;
+            padding: 40px;
+            padding-right: 280px;
+        }
+
+        .main-wrapper .section-title {
+            text-transform: uppercase;
+            font-size: 18px;
+            font-weight: 500;
+            color: var(--secondary-color);
+            position: relative;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .main-wrapper .section-title .icon-holder {
+            width: 30px;
+            height: 30px;
+            margin-right: 8px;
+            display: inline-block;
+            color: #fff;
+            border-radius: 50%;
+            background: var(--primary-color);
+            text-align: center;
+            font-size: 16px;
+            position: relative;
+            top: -2px;
+            padding-top: 2px;
+        }
+
+        .main-wrapper .section-title .icon-holder .svg-inline--fa {
+            font-size: 14px;
+            margin-top: 6px;
+        }
+
+        .main-wrapper .section-title .icon-holder .fa-handshake {
+            font-size: 16px;
+            margin-top: 5px;
+        }
+
+        .main-wrapper .section {
+            margin-bottom: 35px;
+        }
+
+        .main-wrapper .experiences-section .item {
+            margin-bottom: 20px;
+        }
+
+        .main-wrapper .details {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .main-wrapper .details li {
+            color: var(--text-muted);
+            margin-bottom: 5px;
+        }
+
+        .main-wrapper .upper-row {
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 2px;
+        }
+
+        .main-wrapper .job-title {
+            color: var(--secondary-color);
+            font-size: 16px;
+            margin-top: 0;
+            margin-bottom: 0;
+            font-weight: 500;
+        }
+
+        .main-wrapper .time {
+            position: absolute;
+            right: 0;
+            top: 0;
+            color: var(--primary-color);
+            font-weight: 500;
+            font-size: 13px;
+        }
+
+        .main-wrapper .company {
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .main-wrapper .project-title {
+            font-size: 16px;
+            font-weight: 400;
+            margin-top: 0;
+            margin-bottom: 5px;
+        }
+
+        .main-wrapper .projects-section .intro {
+            margin-bottom: 30px;
+        }
+
+        .main-wrapper .projects-section .item {
+            margin-bottom: 15px;
+        }
+
+        .footer {
+            padding: 10px 5px 5px 5px;
+        }
+
+        .footer .copyright {
+            line-height: 1.2;
+            color: var(--text-muted);
+            font-size: 13px;
+            margin: 0;
+        }
+
+        .footer .fa-heart {
+            color: var(--primary-color);
+        }
+
+        /* Card styling with Gurtz Group aesthetic */
+        .card {
+            border: 1px solid rgba(107, 63, 39, 0.1);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            background: #ffffff;
+        }
+
+        .card-header {
+            background: linear-gradient(135deg, var(--primary-color), #8b5a3c);
+            color: #fff;
+            font-weight: 600;
+            border: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 767.98px) {
+            .sidebar-wrapper {
+                position: static;
+                width: inherit;
+            }
+
+            .main-wrapper {
+                padding: 30px;
+            }
+
+            .main-wrapper .time {
+                position: static;
+                display: block;
+                margin-top: 5px;
+            }
+
+            .main-wrapper .upper-row {
+                margin-bottom: 0;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <div class="wrapper mt-lg-5">
+    <div class="wrapper">
         <div class="sidebar-wrapper">
             <div class="profile-container">
                 <img class="profile img-fluid" src="./profile.jpeg" alt="" />
                 <h1 class="name">Marshal Currier</h1>
-                <h3 class="tagline">Site Reliability Engineer</h3>
-                <div class="pt-3">
-                    <a href="./MarshalCurrrierResume2025.pdf" download="MarshalCurrrierResume2025.pdf">
-                        <button type="button" class="btn btn-light">Download Resume</button>
-                    </a>
-                </div>
+                <h3 class="tagline">Legacy-Focused Business Buyer</h3>
             </div>
-            <!--//profile-container-->
 
             <div class="contact-container container-block">
                 <ul class="list-unstyled contact-list">
@@ -47,208 +346,206 @@
                     <li class="linkedin"><i class="fa-brands fa-linkedin-in"></i><a href="https://www.linkedin.com/in/marshal-currier-a9b32342/" target="_blank">linkedin - Marshal Currier</a></li>
                 </ul>
             </div>
-            <!--//contact-container-->
-            <div class="education-container container-block">
-                <h2 class="container-block-title">Education</h2>
-                <div class="item">
-                    <h4 class="degree">Mesa Community College</h4>
-                    <h5 class="meta">Computer Information Systems</h5>
-                    <div class="time">2011 - 2015</div>
-                </div>
-                <!--//item-->
-            </div>
-            <!--//education-container-->
 
-            <div class="languages-container container-block">
-                <h2 class="container-block-title">Languages</h2>
-                <ul class="list-unstyled interests-list">
-                    <li>English <span class="lang-desc">(Native)</span></li>
-                </ul>
-            </div>
-            <!--//interests-->
-
-        </div>
-        <!--//sidebar-wrapper-->
-
-        <div class="main-wrapper pb-1">
-
-            <section class="section summary-section">
-                <h2 class="section-title"><span class="icon-holder"><i class="fa-solid fa-user"></i></span>Career Profile</h2>
-                <div class="summary">
-                    <p>
-                        Results-driven Site Reliability Engineer specializing in observability engineering. 
-                        Experienced in building scalable monitoring, logging, and tracing systems using tools 
-                        like Prometheus, Grafana, and OpenTelemetry to enhance system reliability and performance. 
-                        Passionate about driving automation, improving incident response, and contributing to 
-                        operational excellence. Eager to leverage expertise and grow into leadership roles to 
-                        deliver even greater value to the organization.
+            <div class="container-block">
+                <h2 class="container-block-title">Acquisition Focus</h2>
+                <div style="font-size: 13px; line-height: 1.6;">
+                    <p style="margin-bottom: 8px;">
+                        <strong>Purchase Price:</strong><br>
+                        <span style="opacity: 0.9;">$3M - $8.3M</span>
+                    </p>
+                    <p style="margin-bottom: 8px;">
+                        <strong>Revenue:</strong><br>
+                        <span style="opacity: 0.9;">$1M - $5M annually</span>
+                    </p>
+                    <p style="margin-bottom: 8px;">
+                        <strong>Profit Margins:</strong><br>
+                        <span style="opacity: 0.9;">20% or greater</span>
+                    </p>
+                    <p style="margin-bottom: 8px;">
+                        <strong>Industries:</strong><br>
+                        <span style="opacity: 0.9;">HVAC, Plumbing, Electrical, Roofing, Landscaping</span>
+                    </p>
+                    <p style="margin-bottom: 8px;">
+                        <strong>Team Size:</strong><br>
+                        <span style="opacity: 0.9;">10+ employees</span>
+                    </p>
+                    <p style="margin-bottom: 8px;">
+                        <strong>Location:</strong><br>
+                        <span style="opacity: 0.9;">Location agnostic (Arizona preferred)</span>
+                    </p>
+                    <p style="margin-bottom: 8px;">
+                        <strong>Financials:</strong><br>
+                        <span style="opacity: 0.9;">10 years of records required</span>
+                    </p>
+                    <p style="margin-bottom: 0;">
+                        <strong>Transition:</strong><br>
+                        <span style="opacity: 0.9;">6-12 months handover period</span>
                     </p>
                 </div>
-                <!--//summary-->
+            </div>
+
+        </div>
+
+        <div class="main-wrapper pb-1">
+            <section class="section summary-section">
+                <h2 class="section-title"><span class="icon-holder"><i class="fa-solid fa-handshake"></i></span>Ready to Build Something Real Together</h2>
+                <p class="summary">I'm looking to acquire a business that's already doing things right. One where the foundation is solid, the customers are loyal, and the team cares about their work. I'm not here to strip it down for a quick flip. I want to take what you've built, honor it, and prove that it can thrive under someone who values people over spreadsheets. If you're looking for a buyer who will protect what you've created while building something sustainable, let's talk.</p>
             </section>
-            <!--//section-->
+
+            <section class="section summary-section">
+                <h2 class="section-title"><span class="icon-holder"><i class="fa-solid fa-user"></i></span>Why I'm the Right Buyer</h2>
+                <div class="summary">
+                    <p>
+                        I've spent years in corporate America at PayPal, GEICO, USAA, and American Express. While I learned a lot, I also saw what's broken. The rigid hierarchies, the relentless focus on quarterly profits, the way people become numbers on a spreadsheet. I want to prove that you can run a profitable business without sacrificing the people who make it work. Where employees aren't just resources to be optimized, customer relationships are genuine, and success is measured in years, not quarters.
+                    </p>
+                </div>
+            </section>
+
+            <section class="section summary-section">
+                <h2 class="section-title"><span class="icon-holder"><i class="fa-solid fa-network-wired"></i></span>Resources & Network</h2>
+                <div class="summary">
+                    <p>
+                        <strong>Heritage Wealth Capital Associate:</strong> Direct access to acquisition financing through Heritage Wealth Capital and their network of private investors, family offices, and alternative capital sources.
+                    </p>
+                    <p>
+                        <strong>Elite Wealth Club Member:</strong> Full-cycle support from seasoned acquisition entrepreneurs covering deal sourcing, due diligence, operations, and growth.
+                    </p>
+                    <p>
+                        <strong>Gurtz Group Member:</strong> My core team providing hands-on support before, during, and after the acquisition to ensure a successful transition.
+                    </p>
+                    <p>
+                        <strong>Post-Acquisition Support:</strong> Access to a network of proven business builders, successful operators, and industry leaders providing guidance on scaling, operations, and long-term growth strategies.
+                    </p>
+                </div>
+            </section>
+
+            <section class="section summary-section">
+                <h2 class="section-title"><span class="icon-holder"><i class="fa-solid fa-dollar-sign"></i></span>Deal Structure & Approach</h2>
+                <div class="summary">
+                    <p>
+                        <strong>Financing:</strong> Primary approach is SBA financing. Additional funding available through Heritage Wealth Capital, private investors, and seller financing.
+                    </p>
+                    <p>
+                        <strong>Timeline:</strong> Realistic 6-9 month process allowing comprehensive due diligence, legal review, and proper transition planning.
+                    </p>
+                    <p>
+                        <strong>Post-Acquisition:</strong> No drastic changes. First 3-6 months focused on learning the business and earning trust. Any growth initiatives will prioritize making work easier and more efficient for employees, not adding to their burden.
+                    </p>
+                </div>
+            </section>
 
             <section class="section experiences-section">
-                <h2 class="section-title"><span class="icon-holder"><i class="fa-solid fa-briefcase"></i></span>Experiences</h2>
+                <h2 class="section-title"><span class="icon-holder"><i class="fa-solid fa-briefcase"></i></span>Professional Experience</h2>
 
                 <div class="item">
                     <div class="meta">
                         <div class="upper-row">
-                            <h3 class="job-title">Sr/Lead Site Reliability Engineer</h3>
-                            <div class="time">October 2022 - Current</div>
+                            <h3 class="job-title">Associate</h3>
+                            <div class="time">May 2025 - Current</div>
                         </div>
-                        <!--//upper-row-->
-                        <div class="company">GEICO, Remote Az</div>
+                        <div class="company">Heritage Wealth Capital, Remote Az</div>
                     </div>
-                    <!--//meta-->
                     <div class="details">
-                        <li>Actively participated in the design and implementation of Grafana OSS.</li>
-                        <li>Built API/UI for On Prem servers Observability Service Discovery.</li>
-                        <li>Interviewed and trained a new SRE team.</li>
-                        <li>Director and Executive level communications establishing needs and plans to implement SRE.</li>
-                        <li>Managed SRE team goals, metrics and personal development.</li>
+                        <li>Trained in business acquisitions and investment strategies</li>
+                        <li>Conducting market research and due diligence for potential acquisitions</li>
+                        <li>Building relationships with business owners and industry professionals</li>
+                        <li>Analyzing business valuations and financial performance metrics</li>
                     </div>
-                    <!--//details-->
                 </div>
-                <!--//item-->
-
 
                 <div class="item">
                     <div class="meta">
                         <div class="upper-row">
-                            <h3 class="job-title">Research and Development</h3>
-                            <div class="time">April 2020 - June 2022</div>
+                            <h3 class="job-title">Corporate Leadership & Operations</h3>
+                            <div class="time">2012 - 2025</div>
                         </div>
-                        <!--//upper-row-->
-                        <div class="company">USAA, Phoenix Az</div>
+                        <div class="company">GEICO, USAA, American Express, PayPal</div>
                     </div>
-                    <!--//meta-->
                     <div class="details">
-                        <li>Reduced Mean Time To Detect and created support documents to reduce Mean Time To Resolve.</li>
-                        <li>Created Product Readiness Review for applications being introduced to the production environment.</li>
-                        <li>Worked with Business Teams to establish Service Level Objectives.</li>
-                        <li>Worked with Product Development to maintain Service Level Objectives.</li>
-                        <li>Made decisions regarding company resources impacting logging, monitoring and alerting. </li>
+                        <li>Built and led high-performing teams across multiple Fortune 500 companies</li>
+                        <li>Managed $147M revenue platform operations with 99.999% reliability</li>
+                        <li>Developed cost-reduction strategies while improving operational efficiency</li>
+                        <li>Bridged communication between C-suite executives and operational teams</li>
                     </div>
-                    <!--//details-->
                 </div>
-                <!--//item-->
 
                 <div class="item">
                     <div class="meta">
                         <div class="upper-row">
-                            <h3 class="job-title">Sr. Site Reliability Engineer</h3>
-                            <div class="time">MARCH 2019 - APRIL 2020</div>
+                            <h3 class="job-title">Account Management & Client Relations</h3>
+                            <div class="time">2006 - 2012</div>
                         </div>
-                        <!--//upper-row-->
-                        <div class="company">American Express(OnX), Phoenix Az</div>
+                        <div class="company">GoDaddy, Endurance International, Apple</div>
                     </div>
-                    <!--//meta-->
                     <div class="details">
-                        <li>Managed SRE team for a $147m payment platform.</li>
-                        <li>Responsible for maintaining 99.999% Service Level Objectives.</li>
-                        <li>Worked directly with VP (Executive Communications) and product development teams.</li>
-                        <li>Focused on efficiency regarding logging, monitoring, alerting and incidents.</li>
-
+                        <li>Managed SMB accounts, specializing in escalated customer relationships</li>
+                        <li>Built long-term client success strategies focused on retention and growth</li>
                     </div>
-                    <!--//details-->
                 </div>
-                <!--//item-->
 
-                <div class="item">
-                    <div class="meta">
-                        <div class="upper-row">
-                            <h3 class="job-title">Site Reliability Engineer</h3>
-                            <div class="time">OCTOBER 2012 - MARCH 2019</div>
-                        </div>
-                        <!--//upper-row-->
-                        <div class="company">PayPal, Scottsdale Az</div>
-                    </div>
-                    <!--//meta-->
-                    <div class="details">
-                        <li>In the Command Center his responsibility was to respond to incidents and restore service. </li>
-                        <li>Responsible for all customer facing interactions (payment, website, mobile and POS). </li>
-                        <li>Engaged with Product Development for Post Mortem activities. </li>
-                    </div>
-                    <!--//details-->
-                </div>
-                <!--//item-->
-
+                <p style="margin-top: 15px; color: var(--text-muted); font-size: 13px; font-style: italic;">
+                    Full technical background and detailed experience available on <a href="https://www.linkedin.com/in/marshal-currier-a9b32342/" target="_blank">LinkedIn</a>
+                </p>
             </section>
-            <!--//section-->
 
             <section class="section projects-section">
-                <h2 class="section-title"><span class="icon-holder"><i class="fa-solid fa-archive"></i></span>Professional Highlights</h2>
-                <div class="intro">
-                    <p></p>
-                </div>
+                <h2 class="section-title"><span class="icon-holder"><i class="fa-solid fa-briefcase"></i></span>Business Philosophy</h2>
 
                 <div class="row">
                     <div class="col">
-                        <div class="card  h-100">
-                            <h6 class="card-header" style="background-color:#42A8C0;color:#fff">Grafana OSS Stack</h6>
+                        <div class="card h-100">
+                            <h6 class="card-header">People Over Profit Margins</h6>
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Grafana dashboarding and alerting</li>
-                                <li class="list-group-item">Prometheus/Blackbox Exporters</li>
-                                <li class="list-group-item">Service Discovery Automation</li>
+                                <li class="list-group-item">Pay people fairly because turnover is expensive and demoralizing</li>
+                                <li class="list-group-item">Invest in employee development, not constant replacement</li>
+                                <li class="list-group-item">Treat employees like humans, not line items to optimize</li>
                             </ul>
                         </div>
                     </div>
                     <div class="col">
-                        <div class="card  h-100">
-                            <h6 class="card-header primary" style="background-color:#42A8C0;color:#fff">Pyton and Flask</h6>
+                        <div class="card h-100">
+                            <h6 class="card-header">Operational Stability</h6>
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item">FastAPI/Swagger</li>
-                                <li class="list-group-item">Pandas data management</li>
-                                <li class="list-group-item">SQLAlchemy</li>
+                                <li class="list-group-item">Build systems that work consistently, not just efficiently</li>
+                                <li class="list-group-item">Use data to make decisions, not to justify cutting corners</li>
+                                <li class="list-group-item">Improve incrementally without disrupting what already works</li>
                             </ul>
                         </div>
                     </div>
                 </div>
-
 
                 <div class="row mt-3">
                     <div class="col">
-                        <div class="card  h-100">
-                            <h6 class="card-header" style="background-color:#42A8C0;color:#fff">Incident Mangement</h6>
+                        <div class="card h-100">
+                            <h6 class="card-header">Relationships Matter</h6>
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item">RCA and Postmortem</li>
-                                <li class="list-group-item">Incident Triage</li>
-                                <li class="list-group-item">Automation & Remediation</li>
+                                <li class="list-group-item">Loyal customers are more valuable than new acquisition targets</li>
+                                <li class="list-group-item">Build trust through consistency, not marketing campaigns</li>
+                                <li class="list-group-item">Reputation can't be faked, it's earned over time</li>
                             </ul>
                         </div>
                     </div>
                     <div class="col">
-                        <div class="card  h-100">
-                            <h6 class="card-header primary" style="background-color:#42A8C0;color:#fff">Docker and K8s</h6>
+                        <div class="card h-100">
+                            <h6 class="card-header">Long-Term Thinking</h6>
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Containerized app development</li>
-                                <li class="list-group-item">Deployment with Helm</li>
-                                <li class="list-group-item">Flux & ArgoCD</li>
+                                <li class="list-group-item">Growth is good, but not at the expense of quality or culture</li>
+                                <li class="list-group-item">Reinvest profits into stability, not aggressive expansion</li>
+                                <li class="list-group-item">Build something that lasts, not something to flip quickly</li>
                             </ul>
                         </div>
                     </div>
                 </div>
-
-                <div class="container">
-                </div>
-                <!--//item-->
             </section>
-            <!--//section-->
-
         </div>
-        <!--//main-body-->
     </div>
 
     <footer class="footer">
         <div class="text-center">
-            <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
-            <small class="copyright">Designed with <i class="fa-solid fa-heart"></i> by <a href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for developers</small>
+            <small class="copyright">Part of the <a href="https://gurtzgroup.com" target="_blank">Gurtz Group</a> team | Hosted and developed by <a href="https://hirehumble.com" target="_blank">HireHumble</a></small>
         </div>
-        <!--//container-->
     </footer>
-    <!--//footer-->
-
 </body>
 
 </html>

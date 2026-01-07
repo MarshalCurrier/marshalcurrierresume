@@ -1,6 +1,6 @@
 This favicon was generated using the following font:
 
-- Font Title: Langar
-- Font Author: Copyright 2016 The Langar Project Authors (https://github.com/typeland/Langar)
-- Font Source: http://fonts.gstatic.com/s/langar/v26/kJEyBukW7AIlgjGVrTVZ99sqrQ.ttf
-- Font License: SIL Open Font License, 1.1 (http://scripts.sil.org/OFL))
+- Font Title: Fira Sans
+- Font Author: undefined
+- Font Source: https://fonts.gstatic.com/s/firasans/v17/va9E4kDNxMZdWfMOD5VfkILKSTbndQ.ttf
+- Font License: undefined)

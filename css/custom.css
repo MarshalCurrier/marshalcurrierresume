@@ -45,6 +45,7 @@ p {
   margin: 0 auto;
   position: relative;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  border: 3px solid #42A8C0;
 }
 
 .sidebar-wrapper {
@@ -258,6 +259,48 @@ p {
 }
 .footer .fa-heart {
   color: #fb866a;
+}
+
+/* Clean Professional Introduction */
+.professional-intro {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 2rem 1.5rem;
+  border: 2px solid #42A8C0;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.intro-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2d7788;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.intro-tagline {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #545E6C;
+  max-width: 650px;
+  margin: 0 auto;
+  font-weight: 400;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767.98px) {
+  .professional-intro {
+    padding: 1.5rem 1rem;
+  }
+  
+  .intro-title {
+    font-size: 1.6rem;
+  }
+  
+  .intro-tagline {
+    font-size: 1rem;
+  }
 }
 
 @media (max-width: 767.98px) {
