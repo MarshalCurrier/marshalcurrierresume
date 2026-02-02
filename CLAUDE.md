@@ -21,28 +21,6 @@ docker build -t marshalcurrier-resume .
 docker run -p 8000:80 marshalcurrier-resume
 ```
 
-### E2E Tests (Playwright)
-
-```bash
-cd e2e
-npm ci
-npx playwright install --with-deps chromium
-
-# Run tests (requires site running on localhost:8000)
-npm test
-
-# Run with browser visible
-npm run test:headed
-
-# Debug mode
-npm run test:debug
-
-# View HTML report
-npm run report
-```
-
-Set `BASE_URL` env var to test against different hosts.
-
 ## Architecture
 
 - **index.html**: Main site (Bootstrap 5.2.2 + FontAwesome)
@@ -53,11 +31,10 @@ Set `BASE_URL` env var to test against different hosts.
 ## CI/CD Pipeline
 
 Push to `main` triggers `.github/workflows/ci-cd.yml`:
-1. Runs Playwright tests
-2. Auto-increments patch version from git tags
-3. Builds and pushes to `ghcr.io/marshalcurrier/marshalcurrierresume`
-4. Updates `k8s-manifests` repo with new image tag
-5. Waits for ArgoCD to sync deployment
+1. Auto-increments patch version from git tags
+2. Builds and pushes to `ghcr.io/marshalcurrier/marshalcurrierresume`
+3. Updates `k8s-manifests` repo with new image tag
+4. Waits for ArgoCD to sync deployment
 
 **Do not manually update k8s resources** - ArgoCD manages the `marshalcurrier` deployment in `apps` namespace.
 
