@@ -14,7 +14,7 @@ jobs:
   version-and-deploy:
     name: Version, Build & Deploy
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     permissions:
       contents: write
       packages: write
