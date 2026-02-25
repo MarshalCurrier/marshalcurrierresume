@@ -14,7 +14,7 @@ jobs:
   version-and-deploy:
     name: Version, Build & Deploy
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     permissions:
       contents: write
       packages: write
@@ -79,15 +79,19 @@ jobs:
           GIT_SSH_COMMAND="ssh -i ~/.ssh/k8s_deploy_key" git clone git@github.com:MarshalCurrier/k8s-manifests.git /tmp/k8s-manifests
 
           cd /tmp/k8s-manifests
-          sed -i "s|image: marshalcurrier/marshalcurrier:.*|image: marshalcurrier/marshalcurrier:${IMAGE_TAG}|g" marshalcurrier/deployment.yaml
+          sed -i "s|image: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:.*|image: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${IMAGE_TAG}|g" marshalcurrier/deployment.yaml
 
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
           git add marshalcurrier/deployment.yaml
-          git commit -m "chore(marshalcurrier): update image to ${IMAGE_TAG}
+          if git diff --cached --quiet; then
+            echo "No changes to commit (manifests already up to date)"
+          else
+            git commit -m "chore(marshalcurrier): update image to ${IMAGE_TAG}
 
           Source: ${{ github.repository }}@${{ github.sha }}"
-          GIT_SSH_COMMAND="ssh -i ~/.ssh/k8s_deploy_key" git push
+            GIT_SSH_COMMAND="ssh -i ~/.ssh/k8s_deploy_key" git push
+          fi
 
       - name: Deployment Summary
         run: |
